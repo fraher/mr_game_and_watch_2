@@ -1,0 +1,62 @@
+@font-face {
+  font-family: "PixelUI";
+  src: local("Courier New");
+}
+
+:root {
+  color-scheme: dark;
+  --cabinet: #151320;
+  --screen: #101828;
+  --gold: #ffd166;
+  --cyan: #48cae4;
+  --pink: #ff5d8f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(72, 202, 228, 0.25), transparent 34rem),
+    linear-gradient(135deg, #070711, #1b1430 45%, #05070d);
+  font-family: PixelUI, "Courier New", monospace;
+}
+
+#app {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+canvas {
+  width: min(100vw - 1rem, 1280px);
+  aspect-ratio: 16 / 9;
+  max-height: calc(100vh - 3rem);
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  border: 10px solid #292440;
+  border-radius: 18px;
+  background: var(--screen);
+  box-shadow:
+    0 0 0 4px #070711,
+    0 24px 60px rgba(0, 0, 0, 0.55),
+    inset 0 0 60px rgba(255, 255, 255, 0.06);
+}
+
+.touch-hint {
+  position: fixed;
+  left: 50%;
+  bottom: 0.35rem;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.72);
+  font-size: clamp(0.7rem, 1.8vw, 0.95rem);
+  text-align: center;
+  text-shadow: 0 2px #000;
+  pointer-events: none;
+}
